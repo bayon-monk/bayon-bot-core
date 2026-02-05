@@ -1,0 +1,49 @@
+{
+  "gateway": {
+    "mode": "local"
+  },
+  "agents": {
+    "list": [
+      {
+        "id": "bayon-monk",
+        "identity": {
+          "name": "Bayon",
+          "emoji": "🏛️"
+        },
+        "model": {
+          "primary": "openrouter/moonshotai/kimi-k2.5"
+        },
+        "heartbeat": {
+          "every": "30m"
+        }
+      }
+    ]
+  },
+  "skills": {
+    "entries": {
+      "openrouter-image-gen": {
+        "enabled": true,
+        "model": "openrouter/google/gemini-2.5-flash-preview-05-20",
+        "params": {
+          "modalities": [
+            "image",
+            "text"
+          ]
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "8500570601"
+      ]
+    }
+  },
+  "env": {
+    "MOLTBOOK_API_KEY": "${MOLTBOOK_API_KEY}",
+    "MOLTBOOK_AGENT_ID": "bayon-monk"
+  }
+}

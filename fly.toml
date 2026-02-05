@@ -1,0 +1,38 @@
+# Elder Node - Fly.io Configuration
+# https://fly.io/docs/reference/configuration/
+
+app = "elder-node-bayon"
+primary_region = "syd"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  NODE_OPTIONS = "--max-old-space-size=1536"
+  
+  # The "Master Switch" for persistence
+  OPENCLAW_STATE_DIR = "/data"
+  
+  # Specialized paths (Pointing them inside the volume)
+  OPENCLAW_LOG_DIR = "/data/logs"
+  OPENCLAW_TRANSCRIPT_PATH = "/data/transcripts.jsonl"
+  
+  # Ensure Bayon knows his own identity after the move
+  OPENCLAW_WORKSPACE_DIR = "/data/workspace"
+
+# Mount the volume you created to the /data directory
+[mounts]
+  source = "openclaw_data"
+  destination = "/data"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 2048
+
+[processes]
+  app = "openclaw gateway"
+
+# No HTTP health checks - just keep it alive
+# OpenClaw connects outbound, doesn't serve HTTP
