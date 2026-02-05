@@ -33,7 +33,7 @@ cd elder-node/deploy
 The script will:
 1. Log you into Fly.io
 2. Create the app
-3. Ask for your API key
+3. Ask for your API key.
 4. Optionally configure Telegram/Discord.
 5. Deploy.
 
