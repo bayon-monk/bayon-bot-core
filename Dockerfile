@@ -17,6 +17,7 @@ RUN mkdir -p /home/node/.openclaw/workspace/skills
 
 # Copy configuration
 COPY openclaw.json /home/node/.openclaw/openclaw.json
+COPY openclaw.json /app/openclaw.json
 
 # Copy Elder Node soul, agents config, heartbeat, and skills
 COPY SOUL.md /home/node/.openclaw/workspace/SOUL.md
