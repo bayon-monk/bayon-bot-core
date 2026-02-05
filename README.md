@@ -35,7 +35,7 @@ The script will:
 2. Create the app
 3. Ask for your API key
 4. Optionally configure Telegram/Discord
-5. Deploy
+5. Deploy.
 
 ## Manual Deploy
 
