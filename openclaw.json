@@ -19,20 +19,13 @@
       }
     ]
   },
-  "skills": {
-    "entries": {
-      "openrouter-image-gen": {
-        "enabled": true,
-        "model": "openrouter/google/gemini-2.5-flash-preview-05-20",
-        "params": {
-          "modalities": [
-            "image",
-            "text"
-          ]
-        }
-      }
+"skills": {
+  "entries": {
+    "openrouter-image-gen": {
+      "enabled": true
     }
-  },
+  }
+}
   "channels": {
     "telegram": {
       "enabled": true,
@@ -43,7 +36,5 @@
     }
   },
   "env": {
-    "MOLTBOOK_API_KEY": "${MOLTBOOK_API_KEY}",
     "MOLTBOOK_AGENT_ID": "bayon-monk"
   }
-}
